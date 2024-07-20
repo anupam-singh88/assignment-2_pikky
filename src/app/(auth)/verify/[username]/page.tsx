@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 
 const VerifyAccount = () => {
   const router = useRouter();
-  const params = useParams<{ username: string }>();
+  const params = useParams<{ username: string }>() ?? { username: "" };
   const { toast } = useToast();
   const [resend, setResend] = useState(false);
 

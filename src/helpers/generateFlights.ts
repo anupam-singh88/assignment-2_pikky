@@ -4,7 +4,7 @@ import Flight from '@/model/Flight.model';
 import { useSocket } from '@/context/socket-provider';
 
 const generateFlights = async () => {
-  const {socket} = useSocket()
+  // const {socket} = useSocket()
 
   const types = ['Commercial', 'Military', 'Private'];
   const status = ['Delayed', 'Cancelled', 'In-flight', 'Scheduled/En Route'];
@@ -19,8 +19,8 @@ const generateFlights = async () => {
 
   await newFlight.save();
 
-  const io = socket();
-  io.emit('newFlight', newFlight);
+  // const io = socket();
+  // io.emit('newFlight', newFlight);
 };
 
 setInterval(generateFlights, 60000);
